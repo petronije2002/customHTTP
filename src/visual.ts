@@ -170,8 +170,8 @@ export class Visual implements IVisual {
         let login = base_url + login_url;
 
         let logindata_ = {
-            "userName": "pqr.api.user",
-            "password": "dt2k4GLCUL3cAFig",
+            "userName": "pqr.api.****",
+            "password": "dt2k4GLCUL3cAFig*********",
             "userSpace": "iphone-pqr"
   }
         var login_json = JSON.stringify(logindata_);
