@@ -74,6 +74,15 @@
                         "numeric": true
                     }
                 },
+                
+                "decimalPlacesThisYear": {
+                    "displayName": "Decimal Places",
+                    "description": "Set number of decimaa places",
+                    "type": {
+                       "numeric": true
+                    }
+                },
+                
 
                 "fontFamily": {
                     "displayName": "Font family",
@@ -271,6 +280,15 @@
                                 "color": true
                             }
                         }
+                    }
+                },
+                "decimalPlacesThisYear": {
+                    "displayName": "Decimal Places",
+                    "description": "Set number of decimaa places",
+                    "type": {
+                        "numeric": true
+                    
+                        
                     }
                 },
             

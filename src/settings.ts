@@ -82,6 +82,9 @@ export class ThisYearSetting {
   public displayUnits: number = 1000000 ;
   public cornerRadius: number = 5;
   public backgroundColour: string = '#F76969'
+
+  public decimalPlacesThisYear: number = 0;
+
   // public AcknBackgroundColor: string = "red";
   // public CriticalBackgroundColor: string = "orange";
 
@@ -104,6 +107,8 @@ export class TargetSetting {
   public fontSizeForTitle: number = 18;
   public fontColourTitle: string = "white";
   public reverseTarget: boolean = false;
+  public decimalPlacesThisYear: number = 0;
+
 
   // public AcknBackgroundColor: string = "red";
   // public CriticalBackgroundColor: string = "orange";
