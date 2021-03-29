@@ -4,13 +4,7 @@
             "displayName": "Target",
             "name": "Target",
             "kind": "GroupingOrMeasure"
-        }   ,
-
-        {
-            "displayName": "Total This Year",
-            "name": "ThisYear",
-            "kind": "GroupingOrMeasure"
-        } 
+        }   
 
        
        

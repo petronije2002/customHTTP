@@ -49,6 +49,12 @@ import * as d3 from "d3";
 import { color } from "d3";
 type Selection<T extends d3.BaseType> = d3.Selection<T, any, any, any>;
 
+import axios from "axios";
+
+import {AxiosRequestConfig} from "axios"
+
+
+
 export interface TextProperties  {
 
     text: string,
@@ -56,6 +62,12 @@ export interface TextProperties  {
     fontSize: string
 
 }
+
+
+
+
+
+
 export class Visual implements IVisual {
     public visualSettings: VisualSettings;
 
@@ -81,6 +93,10 @@ export class Visual implements IVisual {
     // private box3: Selection<SVGElement>;
 
     private svg1: Selection<SVGElement>;
+
+    private token: string = ''
+
+    private averageWaitingTime = 0
     // private textLabel1: Selection<SVGElement>;
 
     // private textValue2: Selection<SVGElement>;
@@ -105,6 +121,11 @@ export class Visual implements IVisual {
 
 
     constructor(options: VisualConstructorOptions) {
+
+
+        
+
+
 
        
         this.svg = d3.select(options.element)
@@ -140,9 +161,67 @@ export class Visual implements IVisual {
     }
 
 
+    public take_from_api(){
+
+        let authentication = "";
+        let items = []
+        let base_url = "https://voip.pqr.nl/api/v1/master";
+        let login_url = "/me/login";
+        let login = base_url + login_url;
+
+        let logindata_ = {
+            "userName": "pqr.api.user",
+            "password": "dt2k4GLCUL3cAFig",
+            "userSpace": "iphone-pqr"
+  }
+        var login_json = JSON.stringify(logindata_);
+
+    
+        axios.post(login, login_json)
+            .then(response => {
+                console.log(response.data.authentication);
+
+                this.token = response.data.authentication
+
+                let config = {
+                    headers: {
+                        "Authorization": "xelion " + this.token,
+                        "Content-Type": "application/json"
+                    }
+                }
+
+                let wall_url_servicedesk = base_url + "/wallboards/2069262/stats"
+
+                axios.get(wall_url_servicedesk, config).then(res => {
+
+                    console.log("General statistics: ", res.data.object.accumulatedStatistics[2].value
+                    );
+
+
+                    this.averageWaitingTime = res.data.object.accumulatedStatistics[2].value
+
+                  
+
+                    
+
+                })
+                    .catch(error => {
+                        console.log(error);
+                    })
+                
+
+            })
+    }
+    
 
 
     public update(options: VisualUpdateOptions) {
+
+
+
+        this.take_from_api()
+
+
 
         let dataView1: DataView = options.dataViews[0];
 
@@ -150,7 +229,14 @@ export class Visual implements IVisual {
 
 
 
-        console.log(dataView1)
+        // console.log(dataView1)
+
+        const url: string = 'https://voip.pqr.nl/api/v1/master/me/login';
+
+  
+        // axios.get(url).then((resp)=>{console.log("RRRRR",resp)})
+
+
 
 
         
@@ -171,10 +257,11 @@ export class Visual implements IVisual {
         if (Object.keys(el.roles)[0]==='Target'){
             indexOfTarget = el.index
 
-        }else if (Object.keys(el.roles)[0]==='ThisYear'){
-            indexOfThisYear = el.index
-
         }
+        // else if (Object.keys(el.roles)[0]==='ThisYear'){
+        //     indexOfThisYear = el.index
+
+        // }
         // else if (Object.keys(el.roles)[0]==='PrevYear'){
         //     indexOfPrevYear = el.index
         // }
@@ -200,7 +287,8 @@ export class Visual implements IVisual {
 
         let target = dataView1.table.rows[0][indexOfTarget]
 
-        let thisYear = dataView1.table.rows[0][indexOfThisYear]
+        let thisYear = this.averageWaitingTime
+        // dataView1.table.rows[0][indexOfThisYear]
 
         // let prevYear = dataView1.table.rows[0][indexOfPrevYear]
 
