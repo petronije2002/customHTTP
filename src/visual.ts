@@ -67,7 +67,7 @@ export class Visual implements IVisual {
 
     private textValue1: Selection<SVGElement>;
     private textValue2: Selection<SVGElement>;
-    private textValue3: Selection<SVGElement>;
+    // private textValue3: Selection<SVGElement>;
 
     private customTitle: Selection<SVGElement>;
 
@@ -78,7 +78,7 @@ export class Visual implements IVisual {
     
     private box1: Selection<SVGElement>;
     private box2: Selection<SVGElement>;
-    private box3: Selection<SVGElement>;
+    // private box3: Selection<SVGElement>;
 
     private svg1: Selection<SVGElement>;
     // private textLabel1: Selection<SVGElement>;
@@ -120,12 +120,12 @@ export class Visual implements IVisual {
 
         this.box1 = this.container.append('rect').classed('textBox',true)
         this.box2 = this.container.append('rect').classed('textBox',true)
-        this.box3 = this.container.append('rect').classed('textBox',true)
+        // this.box3 = this.container.append('rect').classed('textBox',true)
 
         this.textValue1 = this.container.append('text').classed('textBox', true)
 
         this.textValue2 = this.container.append('text').classed('textBox', true)
-        this.textValue3 = this.container.append('text').classed('textBox', true)
+        // this.textValue3 = this.container.append('text').classed('textBox', true)
 
 
         this.customTitle = this.container.append('text').classed('textBox', true)
@@ -155,13 +155,13 @@ export class Visual implements IVisual {
 
         
 
-        let textHeightPrevYear = Math.trunc(textMeasurementService.measureSvgTextHeight( {text:"P",fontFamily: this.visualSettings.prevYear.fontFamily.toString(), fontSize: this.visualSettings.prevYear.fontSize.toString()}))
+        // let textHeightPrevYear = Math.trunc(textMeasurementService.measureSvgTextHeight( {text:"P",fontFamily: this.visualSettings.prevYear.fontFamily.toString(), fontSize: this.visualSettings.prevYear.fontSize.toString()}))
         let textHeightThisYear = textMeasurementService.measureSvgTextHeight( {text:"P",fontFamily: this.visualSettings.thisYear.fontFamily.toString(), fontSize: this.visualSettings.thisYear.fontSize.toString()})
         let textHeightTarget = textMeasurementService.measureSvgTextHeight( {text:"T",fontFamily: this.visualSettings.target.fontFamily.toString(), fontSize: this.visualSettings.target.fontSize.toString()})
 
     
 
-        let iValueFormatterPrevYear = valueFormatter.create({ value:  this.visualSettings.prevYear.displayUnits });
+        // let iValueFormatterPrevYear = valueFormatter.create({ value:  this.visualSettings.prevYear.displayUnits });
         let iValueFormatterThisYear = valueFormatter.create({ value:  this.visualSettings.thisYear.displayUnits });
         let iValueFormatterTarget = valueFormatter.create({ value:  this.visualSettings.target.displayUnits });
 
@@ -174,9 +174,10 @@ export class Visual implements IVisual {
         }else if (Object.keys(el.roles)[0]==='ThisYear'){
             indexOfThisYear = el.index
 
-        }else if (Object.keys(el.roles)[0]==='PrevYear'){
-            indexOfPrevYear = el.index
         }
+        // else if (Object.keys(el.roles)[0]==='PrevYear'){
+        //     indexOfPrevYear = el.index
+        // }
     
     }))
         // let formatedValue = iValueFormatterPrevYear.format(30000000)
@@ -201,7 +202,7 @@ export class Visual implements IVisual {
 
         let thisYear = dataView1.table.rows[0][indexOfThisYear]
 
-        let prevYear = dataView1.table.rows[0][indexOfPrevYear]
+        // let prevYear = dataView1.table.rows[0][indexOfPrevYear]
 
         
        
@@ -306,11 +307,11 @@ export class Visual implements IVisual {
         .style("fill-opacity","0.75")
 
 
-        this.box3.attr('x', firstWidth).attr('y',firstHeight + 2* boxHeight +2*10).attr("width", boxWidth.toString()).attr('height',boxHeight).style("fill-opacity","0.25")
-        .attr("rx",this.visualSettings.prevYear.cornerRadius)
-        .attr("ry",this.visualSettings.prevYear.cornerRadius)
-        .style('fill',this.visualSettings.prevYear.backgroundColour)
-        .style("fill-opacity","0.75")
+        // this.box3.attr('x', firstWidth).attr('y',firstHeight + 2* boxHeight +2*10).attr("width", boxWidth.toString()).attr('height',boxHeight).style("fill-opacity","0.25")
+        // .attr("rx",this.visualSettings.prevYear.cornerRadius)
+        // .attr("ry",this.visualSettings.prevYear.cornerRadius)
+        // .style('fill',this.visualSettings.prevYear.backgroundColour)
+        // .style("fill-opacity","0.75")
 
 
         // this.textValue3.text(`The Goal:  ${iValueFormatterTarget.format(target).toString()}` ).attr('x',firstWidth+10).attr('y',firstHeight + 2*boxHeight +2*10 + boxHeight/2 + textHeightTarget/4)
@@ -338,10 +339,10 @@ export class Visual implements IVisual {
         .style("font-family", this.visualSettings.thisYear.fontFamily)
 
 
-        this.textValue3.text(`Prev. Year:  ${iValueFormatterPrevYear.format(prevYear).toString()}` ).attr('x',firstWidth+10).attr('y',firstHeight + 2*boxHeight +2*10 + boxHeight/2 + textHeightPrevYear/4)
-        .style("font-size", this.visualSettings.prevYear.fontSize)
-        .style("fill", this.visualSettings.prevYear.fontColour)
-        .style("font-family", this.visualSettings.prevYear.fontFamily)
+        // this.textValue3.text(`Prev. Year:  ${iValueFormatterPrevYear.format(prevYear).toString()}` ).attr('x',firstWidth+10).attr('y',firstHeight + 2*boxHeight +2*10 + boxHeight/2 + textHeightPrevYear/4)
+        // .style("font-size", this.visualSettings.prevYear.fontSize)
+        // .style("fill", this.visualSettings.prevYear.fontColour)
+        // .style("font-family", this.visualSettings.prevYear.fontFamily)
 
         let titleLength = textMeasurementService.measureSvgTextWidth( {text: this.visualSettings.target.customText,fontFamily: this.visualSettings.target.fontFamily.toString(), fontSize: this.visualSettings.target.fontSizeForTitle.toString()})
 

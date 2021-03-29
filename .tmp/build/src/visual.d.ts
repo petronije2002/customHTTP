@@ -20,13 +20,11 @@ export declare class Visual implements IVisual {
     private container2;
     private textValue1;
     private textValue2;
-    private textValue3;
     private customTitle;
     private signal;
     private signal2;
     private box1;
     private box2;
-    private box3;
     private svg1;
     constructor(options: VisualConstructorOptions);
     enumerateObjectInstances(options: EnumerateVisualObjectInstancesOptions): VisualObjectInstanceEnumeration;

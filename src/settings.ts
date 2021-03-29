@@ -56,14 +56,14 @@ export class CustomTitle{
   public fontSize = 16
 }
 
-export class PrevYearSetting {
-  public fontColour: string = "white";
-  public fontSize: number = 18;
-  public fontFamily: string = "Silka";
-  public displayUnits: number = 1000000 ;
-  public cornerRadius: number = 5;
-  public backgroundColour: string = 'blue'
-
+// export class PrevYearSetting {
+//   public fontColour: string = "white";
+//   public fontSize: number = 18;
+//   public fontFamily: string = "Silka";
+//   public displayUnits: number = 1000000 ;
+//   public cornerRadius: number = 5;
+//   public backgroundColour: string = 'blue'
+// undo until here _____ this is the end of the prev
   // public AcknBackgroundColor: string = "red";
   // public CriticalBackgroundColor: string = "orange";
 
@@ -73,7 +73,7 @@ export class PrevYearSetting {
   // public FontValueColor: string = "black";
   // public fontFamily: string = "\"Segoe UI\", wf_segoe-ui_normal, helvetica, arial, sans-serif"
   // public CompanyFontSize: number = 20;
-} 
+// } 
 
 export class ThisYearSetting {
   public fontColour: string = "white";
@@ -131,7 +131,7 @@ export class CircleSettings2{
 
 
 export class VisualSettings extends DataViewObjectsParser {
-      public prevYear: PrevYearSetting = new PrevYearSetting();
+      // public prevYear: PrevYearSetting = new PrevYearSetting();
       public thisYear: ThisYearSetting = new ThisYearSetting();
 
       public target: TargetSetting = new TargetSetting()

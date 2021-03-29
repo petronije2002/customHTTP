@@ -10,14 +10,6 @@ export declare class CustomTitle {
     fontColor: string;
     fontSize: number;
 }
-export declare class PrevYearSetting {
-    fontColour: string;
-    fontSize: number;
-    fontFamily: string;
-    displayUnits: number;
-    cornerRadius: number;
-    backgroundColour: string;
-}
 export declare class ThisYearSetting {
     fontColour: string;
     fontSize: number;
@@ -44,7 +36,6 @@ export declare class CircleSettings2 {
     displayUnits: number;
 }
 export declare class VisualSettings extends DataViewObjectsParser {
-    prevYear: PrevYearSetting;
     thisYear: ThisYearSetting;
     target: TargetSetting;
 }
