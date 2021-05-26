@@ -1,14 +1,14 @@
 {
-    "version": "1.0.3",
+    "version": "1.1.0",
     "author": {"name":"Petar Jovanovic","email":"petar.jovanovic@pqr.nl"},
     "resources": [
         {
             "resourceId": "rId0",
             "sourceType": 5,
-            "file": "resources/customKPIHTTP9AAB3DB28C684880BE8BFF59E94A3EF0.pbiviz.json"
+            "file": "resources/customKPIHTTUPDATEDP9AAB3DB28C684880BE8BFF59E94A3EF0.pbiviz.json"
         }
     ],
-    "visual": {"name":"custom KPI HTTP","displayName":"custom KPI HTTP","guid":"customKPIHTTP9AAB3DB28C684880BE8BFF59E94A3EF0","visualClassName":"Visual","version":"1.0.3","description":"Custom KPI PQR with HTTP call","supportUrl":"www.google.com","gitHubUrl":""},
+    "visual": {"name":"custom KPI HTTP","displayName":"custom KPI HTTP","guid":"customKPIHTTUPDATEDP9AAB3DB28C684880BE8BFF59E94A3EF0","visualClassName":"Visual","version":"1.1.0","description":"Custom KPI PQR with HTTP call","supportUrl":"www.google.com","gitHubUrl":""},
     "metadata": {
         "pbivizjson": {
             "resourceId": "rId0"
