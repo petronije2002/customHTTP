@@ -5,8 +5,8 @@ import VisualConstructorOptions = powerbiVisualsApi.extensibility.visual.VisualC
 var powerbiKey: any = "powerbi";
 var powerbi: any = window[powerbiKey];
 
-var customKPIHTTP9AAB3DB28C684880BE8BFF59E94A3EF0: IVisualPlugin = {
-    name: 'customKPIHTTP9AAB3DB28C684880BE8BFF59E94A3EF0',
+var customKPIHTTP9AAB3DB28C684880BE8BFF59E94A3EF0_DEBUG: IVisualPlugin = {
+    name: 'customKPIHTTP9AAB3DB28C684880BE8BFF59E94A3EF0_DEBUG',
     displayName: 'custom KPI HTTP',
     class: 'Visual',
     apiVersion: '2.6.0',
@@ -23,7 +23,7 @@ var customKPIHTTP9AAB3DB28C684880BE8BFF59E94A3EF0: IVisualPlugin = {
 if (typeof powerbi !== "undefined") {
     powerbi.visuals = powerbi.visuals || {};
     powerbi.visuals.plugins = powerbi.visuals.plugins || {};
-    powerbi.visuals.plugins["customKPIHTTP9AAB3DB28C684880BE8BFF59E94A3EF0"] = customKPIHTTP9AAB3DB28C684880BE8BFF59E94A3EF0;
+    powerbi.visuals.plugins["customKPIHTTP9AAB3DB28C684880BE8BFF59E94A3EF0_DEBUG"] = customKPIHTTP9AAB3DB28C684880BE8BFF59E94A3EF0_DEBUG;
 }
 
-export default customKPIHTTP9AAB3DB28C684880BE8BFF59E94A3EF0;
+export default customKPIHTTP9AAB3DB28C684880BE8BFF59E94A3EF0_DEBUG;
