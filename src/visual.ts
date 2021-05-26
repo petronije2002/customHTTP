@@ -96,7 +96,11 @@ export class Visual implements IVisual {
 
     private token: string = ''
 
-    private averageWaitingTime = 0
+    public averageWaitingTime = 0
+
+    
+
+
     // private textLabel1: Selection<SVGElement>;
 
     // private textValue2: Selection<SVGElement>;
@@ -123,11 +127,6 @@ export class Visual implements IVisual {
     constructor(options: VisualConstructorOptions) {
 
 
-        
-
-
-
-       
         this.svg = d3.select(options.element)
             .append('svg')
             .classed('circleCard', true);
@@ -151,6 +150,8 @@ export class Visual implements IVisual {
 
         this.customTitle = this.container.append('text').classed('textBox', true)
 
+        this.take_from_api()
+
 
     }
 
@@ -170,8 +171,8 @@ export class Visual implements IVisual {
         let login = base_url + login_url;
 
         let logindata_ = {
-            "userName": "pqr.api.****",
-            "password": "dt2k4GLCUL3cAFig*********",
+            "userName": "pqr.api.user**********",
+            "password": "dt2k4GLCUL3cAFig***********",
             "userSpace": "iphone-pqr"
         }
         var login_json = JSON.stringify(logindata_);
@@ -199,6 +200,11 @@ export class Visual implements IVisual {
 
 
                     this.averageWaitingTime = res.data.object.accumulatedStatistics[2].value
+
+
+                    console.log("One more time", this.averageWaitingTime)
+
+                    
 
                   
 
@@ -297,6 +303,7 @@ export class Visual implements IVisual {
         let target = dataView1.table.rows[0][indexOfTarget]
 
         let thisYear = this.averageWaitingTime
+
         // dataView1.table.rows[0][indexOfThisYear]
 
         // let prevYear = dataView1.table.rows[0][indexOfPrevYear]

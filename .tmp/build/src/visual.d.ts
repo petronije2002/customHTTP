@@ -27,7 +27,7 @@ export declare class Visual implements IVisual {
     private box2;
     private svg1;
     private token;
-    private averageWaitingTime;
+    averageWaitingTime: number;
     constructor(options: VisualConstructorOptions);
     enumerateObjectInstances(options: EnumerateVisualObjectInstancesOptions): VisualObjectInstanceEnumeration;
     take_from_api(): void;
